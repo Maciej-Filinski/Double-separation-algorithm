@@ -9,10 +9,12 @@ p = size(Un, 1);
 q = 3; 
 N = length(Un); 
 Yn = zeros(q, N);
-Un = 4*(2*Un - 1);
+c = 1;
+Un = c*4*(2*Un - 1);
 %%% dynamic block %%%
 for i = 1: p
     Vn{i} = Un(i, :);
+%     Vn{i} = [];
     ith_memory = Un(i, :);
     for j = 1: d
         ith_memory = [rand(1), ith_memory(:, 1: end-1)];

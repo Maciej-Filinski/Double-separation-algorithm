@@ -47,6 +47,7 @@ for kappa = 1: q
         
         %%% calculate separability convergence to noise variance %%%
         N_sim = [20:10:99, 100:50:990, 1000:100:c];
+        N_sim = 20:1:c;
         S_tmp = zeros(1, length(N_sim));
         for i=1:length(N_sim)
             S_tmp(i) = separability_factor(y_n(kappa, :), y_ksi(:, 1: N_sim(i)), d);
